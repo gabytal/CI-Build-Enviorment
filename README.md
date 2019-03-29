@@ -7,3 +7,6 @@ there are 3 servers -
   | 172.16.1.101 | artifactory.cilab | `nexus`, `java` | 8081->38081 |
   | 172.16.1.103 | buildserver.cilab| `jenkins`, `GIT`, `Maven` | 8080->38080 |
   | 172.16.1.104 | buildnode.cilab | `GIT`, `Maven` |
+
+#notes
+port-fowarding auto correct is on, so check the server port with "vagrant port MACHINE_NAME" command.

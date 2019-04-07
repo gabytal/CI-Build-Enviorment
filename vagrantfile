@@ -33,21 +33,6 @@ Vagrant.configure(2) do |config|
       buildservercilab.vm.provision "shell", path: "machines-user-data/common.sh"
    end
   end
-  config.vm.define "webservercilab" do |webservercilab|
-    webservercilab.vm.box = "centos/7"
-    webservercilab.vm.hostname = 'webservercilab' 
-    webservercilab.vm.network "private_network", ip: "172.16.1.109"
-    webservercilab.vm.network "forwarded_port", guest: 8080, host: 39091, protocol: "tcp", auto_correct: true
-    webservercilab.vm.provider 'virtualbox' do |virtualbox|
-      virtualbox.linked_clone = true 
-      virtualbox.name = 'webservercilab'
-      virtualbox.gui = false
-      virtualbox.memory =  1024
-      virtualbox.cpus = 1
-      webservercilab.vm.provision "shell", path: "machines-user-data/webservercilab.sh"
-      webservercilab.vm.provision "shell", path: "machines-user-data/common.sh"
-   end
-  end
    config.vm.define "buildnodecilab" do |buildnodecilab|
     buildnodecilab.vm.box = "centos/7"
     buildnodecilab.vm.hostname = 'buildnodecilab' 

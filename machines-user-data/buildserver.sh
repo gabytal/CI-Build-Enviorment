@@ -22,6 +22,8 @@ function installDocker(){
   yum install -y docker
   systemctl enable docker
   systemctl start docker
+  sudo groupadd docker
+  sudo usermod -aG docker jenkins
 }
 
 function installMaven(){

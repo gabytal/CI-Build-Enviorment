@@ -28,6 +28,8 @@ function installNexus(){
   chkconfig --levels 345 nexus on
   systemctl enable nexus
   systemctl start nexus
+  sudo sed 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+
 }
 
 function main(){

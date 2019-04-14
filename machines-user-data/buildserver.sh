@@ -31,7 +31,6 @@ function installMaven(){
   sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
   sudo ln -s /opt/apache-maven-3.6.0 /opt/maven
   sudo ln -s /opt/maven/bin/mvn /usr/local/bin/mvn
-  mvn --version
 }
 
 function main(){
